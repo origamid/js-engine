@@ -1,3 +1,5 @@
+@import './css/tooltip.css';
+
 body, h1 {
   margin: 0px;
   padding: 0px;
@@ -17,13 +19,14 @@ pre {
 .js-engine {
   display: grid;
   grid-gap: 20px;
-  grid-template-rows: 200px 50px 34px 120px;
-  grid-template-columns: 45% 22% 27%;
+  box-sizing: border-box;
+  grid-template-rows: 150px 50px 34px 150px;
+  grid-template-columns: 45% 23% 1fr;
   grid-template-areas:  "code call memory"
-                        "code call api"
+                        "code call memory"
                         "code event api"
                         "code queue api"
-                        "log log log";
+                        "log anotacao anotacao";
 }
 
 .js-engine > section {
@@ -36,17 +39,17 @@ pre {
 
 .js-engine > section::-webkit-scrollbar {
   width: 8px;
-  background: #d8d8d8;
+  background: #EEE;
   border-radius: 4px;
 }
 
-.js-engine > section.code pre::-webkit-scrollbar {
+.js-engine > section.code pre::-webkit-scrollbar, .js-engine > section.log::-webkit-scrollbar {
   width: 8px;
   background: #222;
   border-radius: 4px;
 }
 
-.js-engine > section.code pre::-webkit-scrollbar-thumb {
+.js-engine > section.code pre::-webkit-scrollbar-thumb, .js-engine > section.code::-webkit-scrollbar-thumb {
   background: #777;
   border: 3px solid #222;
   border-radius: 4px;
@@ -54,7 +57,7 @@ pre {
 
 .js-engine > section::-webkit-scrollbar-thumb {
   background: #c8c8c8;
-  border: 3px solid #d8d8d8;
+  border: 3px solid #EEE;
   border-radius: 4px;
 }
 
@@ -150,14 +153,16 @@ section {
 }
 
 .call, .queue, .api, .memory {
-  background: #d8d8d8;
+  background: #EEE;
+  box-shadow: 1px 1px 0 1px rgba(0,0,0,.1);
 }
 
 h1 {
   font-weight: normal;
-  color: #404757;
+  color: #445;
   font-size: .875rem;
   margin-bottom: 1rem;
+  font-weight: bold;
 }
 
 .func {
@@ -294,4 +299,72 @@ h1 {
 
 .animate svg {
   animation: time 2s reverse infinite linear;
+}
+
+[data-update] {
+  position: relative;
+}
+
+[data-update]::after {
+  display: block;
+  content: '';
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: greenyellow;
+  border-radius: 50%;
+  top: -4px;
+  right: -4px;
+  border: 2px solid black;
+  transition: .3s;
+  animation: show-update .3s forwards, update 1.2s alternate infinite linear;
+}
+
+@keyframes show-update {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+    transform-origin: center;
+  }
+}
+
+@keyframes update {
+  from {
+    background: black;
+  }
+  to {
+    background: #6D6;
+  }
+}
+
+.log {
+  background: #222;
+}
+
+.log h1 {
+  color: #fff;
+}
+
+.log .content {
+  color: #6D6;
+  counter-reset: span;
+}
+
+.log .content span {
+  padding: 0px;
+  margin-bottom: .5rem;
+}
+
+.log .content span::before {
+  counter-increment: span;
+  content: counter(span) ' ';
+  opacity: .5;
+}
+
+.anotacao {
+  grid-area: anotacao;
+  overflow: hidden !important;
+  min-height: 120px;
 }

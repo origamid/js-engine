@@ -10,9 +10,9 @@
 </head>
 <body>
   <nav class="nav">
-    <button class="anterior">anterior</button>
+    <button class="anterior">Anterior</button>
     <span class="etapa"></span>
-    <button class="proximo">proximo</button>
+    <button class="proximo">Próximo</button>
   </nav>
   <section class="js-engine">
 <section class="code">
@@ -34,7 +34,6 @@ setTimeout(() => {
 console.log('console 2');
 
 btn.addEventListener('click', handleClick);
-
 </code></pre>
 </section>
     <section class="call">
@@ -49,7 +48,7 @@ btn.addEventListener('click', handleClick);
       </div>
     </section>
     <section class="queue">
-      <h1>Task Queue</h1>
+      <h1>Callback Queue</h1>
       <div id="queue" class="content"></div>
     </section>
     <section class="memory">
@@ -67,10 +66,15 @@ btn.addEventListener('click', handleClick);
       <div id="log" class="content">
       </div>
     </section>
+    <section class="anotacao">
+      <h1>Anotações</h1>
+      <div id="anotacao" class="content">
+      </div>
+    </section>
   </section>
 
   <script src="js/prism.js"></script>
   <script src="js/prism-custom.js"></script>
-  <script src="script.js"></script>
+  <script type="module" src="script.js"></script>
 </body>
 </html>

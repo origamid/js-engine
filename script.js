@@ -1,3 +1,5 @@
+import initTooltip from './js/tooltip.js';
+
 Prism.highlightAll();
 
 // worst code ever
@@ -10,12 +12,12 @@ function fetchEtapa(etapa = 0) {
   .then(r => {
     dom.innerHTML = r;
     const elements = Array.from(dom.children);
+    
     elements.forEach(element => {
       const actualElement = document.getElementById(element.id);
       if(element.id === 'code') {
         actualElement.nextElementSibling.dataset.line = element.dataset.line;
         Prism.highlightAll();
-        console.log(element.dataset.line);
         if(element.dataset.line === '0')
           setTimeout(()=> document.querySelector('.line-highlight').remove());
         if(element.dataset.queue)
@@ -24,6 +26,7 @@ function fetchEtapa(etapa = 0) {
           document.querySelector('#event').classList.remove('animate');
       }
       actualElement.innerHTML = element.innerHTML;
+      initTooltip(actualElement);
     })
   }).then(() => {
     const remover = document.querySelectorAll('[data-remover]');

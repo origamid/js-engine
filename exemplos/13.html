@@ -2,16 +2,16 @@
 
 <div id="call" class="content">
   <span class="func" data-remove>log('timeout')</span>
-  <span class="func" data-remove>anonymous f()</span>
+  <span class="func" data-remove>anonymous()</span>
 </div>
 
 <div id="queue" class="content">
 </div>
 
 <div id="memory" class="content">
-  <span class="str" title="elemento .button">btn</span>
-  <span class="str" title="elemento .section">section</span>
-  <span class="func" title="código da função">handleClick</span>
+  <span class="str" aria-label="Element [.button]" >btn</span>
+  <span class="str" aria-label="Element [.section]" >section</span>
+  <span class="func" aria-label="handleClick() {...}" >handleClick</span>
 </div>
 
 <div id="api" class="content">
@@ -23,7 +23,11 @@
 </div>
 
 <div id="log" class="content">
-  <span class="str">console 1</span>
-  <span class="str">console 2</span>
-  <span class="str">timeout</span>
+  <span>console 1</span>
+  <span>console 2</span>
+  <span>timeout</span>
+</div>
+
+<div id="anotacao" class="content">
+  <p>Execução: função anônima finaliza. Não existem mais eventos na Callback Queue. Fim.</p>
 </div>
