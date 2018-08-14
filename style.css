@@ -1,0 +1,297 @@
+body, h1 {
+  margin: 0px;
+  padding: 0px;
+  font-family: 'IBM Plex Mono';
+  font-size: .875rem;
+}
+
+pre {
+  margin: 0px;
+}
+
+.nav {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.js-engine {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-rows: 200px 50px 34px 120px;
+  grid-template-columns: 45% 22% 27%;
+  grid-template-areas:  "code call memory"
+                        "code call api"
+                        "code event api"
+                        "code queue api"
+                        "log log log";
+}
+
+.js-engine > section {
+  overflow-y: scroll;
+}
+
+.js-engine > section.event, .js-engine > section.code {
+  overflow: hidden;
+}
+
+.js-engine > section::-webkit-scrollbar {
+  width: 8px;
+  background: #d8d8d8;
+  border-radius: 4px;
+}
+
+.js-engine > section.code pre::-webkit-scrollbar {
+  width: 8px;
+  background: #222;
+  border-radius: 4px;
+}
+
+.js-engine > section.code pre::-webkit-scrollbar-thumb {
+  background: #777;
+  border: 3px solid #222;
+  border-radius: 4px;
+}
+
+.js-engine > section::-webkit-scrollbar-thumb {
+  background: #c8c8c8;
+  border: 3px solid #d8d8d8;
+  border-radius: 4px;
+}
+
+.code {
+  grid-area: code;
+}
+
+.call {
+  grid-area: call;
+}
+
+.memory {
+  grid-area: memory;
+}
+
+.event {
+  grid-area: event;
+}
+
+.queue {
+  grid-area: queue;
+}
+
+.api {
+  grid-area: api;
+}
+
+.log {
+  grid-area: log;
+}
+
+section {
+  border-radius: 2px;
+  padding: .875rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.content span {
+  display: inline-block;
+  padding: .5rem;
+  border-radius: 4px;
+  margin-bottom: .5rem;
+}
+
+.closure {
+  overflow: hidden;
+}
+
+.closure span:first-child {
+  margin-left: 0px;
+}
+
+.closure span:first-child::before {
+  display: none;
+}
+
+.closure span {
+  position: relative;
+}
+
+.closure span::before {
+  content: '';
+  width: 2px;
+  height: 38px;
+  position: absolute;
+  z-index: 200;
+  top: -10px;
+  left: -10px;
+  border-left: dotted 1px rgba(0,0,0,.5);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.call .content {
+  margin-top: auto;
+}
+
+.closure span {
+  display: flex;
+  float: left; 
+  clear: left;
+  margin-left: 20px;
+  margin-bottom: .5rem;
+}
+
+.content div {
+  margin-bottom: 1.2rem;
+}
+
+.call, .queue, .api, .memory {
+  background: #d8d8d8;
+}
+
+h1 {
+  font-weight: normal;
+  color: #404757;
+  font-size: .875rem;
+  margin-bottom: 1rem;
+}
+
+.func {
+  background: #fc3;
+  color: #222;
+}
+
+.str {
+  background: #555;
+  color: #fff;
+}
+
+.dom {
+  background: #555;
+  color: #fff;
+}
+
+.evt {
+  background: #B1E;
+  color: #fff;
+  position: relative;
+}
+
+.evt.time::before {
+  display: block;
+  content: '';
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border: 4px solid #B1E;
+  border-left: 4px solid #d8d8d8;
+  background: #d8d8d8;
+  border-radius: 50%;
+  top: -5px;
+  left: -5px;
+  animation: time 1s forwards 5 linear;
+}
+
+@keyframes time {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.api-link span {
+  position: relative;
+  padding: .5rem 1rem;
+}
+
+.api-link span::after {
+  display: inline-block;
+  content: '';
+  height: 4px;
+  top: 15px;
+  right: -14px;
+  width: 20px;
+  position: absolute;
+  background: #555;
+  z-index: 200;
+}
+
+.api-link span:last-child {
+  padding-right: .5rem;
+}
+
+.api-link span:last-child::after {
+  display: none;
+}
+
+.event, .code {
+  padding: 0px;
+}
+
+.event div {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.event span {
+  background: #B1E;
+  color: white;
+  padding: .5rem;
+  border-radius: 2px;
+  margin-right: 10px;
+}
+
+.event svg g {
+  stroke: #B1E;
+  stroke-width: 2px;
+}
+
+.code {
+  background: #222;
+}
+
+[data-anime] {
+  animation: slide .5s forwards;
+}
+
+[data-remove] {
+  animation: slide-out .5s forwards;
+}
+
+@keyframes slide {
+  from {
+    opacity: 0;
+    transform: translate3d(-30px, 0, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes slide-out {
+  0% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+  99% {
+    opacity: 0;
+    transform: translate3d(-30px, 0, 0);
+  }
+  100% {
+    display: none;
+    opacity: 0;
+    transform: translate3d(-30px, 0, 0);
+  }
+}
+
+.animate svg {
+  animation: time 2s reverse infinite linear;
+}

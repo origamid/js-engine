@@ -1,0 +1,224 @@
+/* PrismJS 1.15.0
+https://prismjs.com/download.html#themes=prism-dark&languages=markup+css+clike+javascript */
+/**
+ * prism.js Dark theme for JavaScript, CSS and HTML
+ * Based on the slides of the talk “/Reg(exp){2}lained/”
+ * @author Lea Verou
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+  color: white;
+  background: none;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.5;
+  overflow: auto;
+  tab-size: 2;
+  hyphens: none;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.875rem;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+pre[class*="language-"],
+:not(pre) > code[class*="language-"] {
+  background: #222222;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: 1rem;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: 0.15em 0.2em 0.05em;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: #8b888f;
+  font-style: italic;
+}
+
+.token.punctuation {
+  color: #8b888f;
+}
+
+.namespace {
+  opacity: 0.7;
+}
+
+.token.property,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol,
+.token.condicional {
+  color: #9bf;
+}
+
+.token.property,
+.token.object-property {
+  color: #bbc;
+}
+
+.token.attr-value,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+  color: #8b4;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.token.variable {
+  color: #f72;
+}
+
+.token.atrule,
+.token.keyword {
+  color: #daf;
+  font-style: italic;
+}
+
+.token.tag,
+.token.special,
+pre[class*="language-css"],
+code[class*="language-css"] {
+  color: #daf;
+}
+
+.token.regex,
+.token.important {
+  color: #f72;
+}
+
+.token.attr-name,
+.token.selector,
+.token.function,
+.token.function-2,
+.token.arrow {
+  color: #fd4;
+}
+
+.token.important,
+.token.bold {
+  font-weight: bold;
+}
+.token.italic {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.875rem;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.deleted {
+  color: red;
+}
+
+pre[class*="language-"].line-numbers {
+  position: relative;
+  padding-left: 3.8em;
+  counter-reset: linenumber;
+}
+
+pre[class*="language-"].line-numbers > code {
+  position: relative;
+  white-space: inherit;
+}
+
+.line-numbers .line-numbers-rows {
+  position: absolute;
+  pointer-events: none;
+  top: 0;
+  font-size: 100%;
+  left: -3.8em;
+  width: 3em; /* works for line-numbers below 1000 lines */
+  letter-spacing: -1px;
+  border-right: 1px solid #333;
+
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.line-numbers-rows > span {
+  pointer-events: none;
+  display: block;
+  counter-increment: linenumber;
+}
+
+.line-numbers-rows > span:before {
+  content: counter(linenumber);
+  color: #555;
+  display: block;
+  padding-right: 0.8em;
+  text-align: right;
+}
+
+pre[data-line] {
+  position: relative;
+  padding: 1em 0 1em 3em;
+}
+
+.line-highlight {
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: inherit 0;
+  margin-top: 1em; /* Same as .prism’s padding-top */
+
+  background: hsla(24, 20%, 50%, 0.08);
+  background: linear-gradient(
+    to right,
+    rgba(255,255,255,.2) 70%,
+    rgba(255,255,255,.2)
+  );
+
+  pointer-events: none;
+
+  line-height: inherit;
+  white-space: pre;
+}
+
+.line-highlight:before,
+.line-highlight[data-end]:after {
+  content: attr(data-start);
+  position: absolute;
+  top: 0.4em;
+  left: 0.6em;
+  min-width: 1em;
+  padding: 0 0.5em;
+  background-color: hsla(24, 20%, 50%, 0.4);
+  color: hsl(24, 20%, 95%);
+  font: bold 65%/1.5 sans-serif;
+  text-align: center;
+  vertical-align: 0.3em;
+  border-radius: 999px;
+  text-shadow: none;
+  box-shadow: 0 1px white;
+}
+
+.line-highlight[data-end]:after {
+  content: attr(data-end);
+  top: auto;
+  bottom: 0.4em;
+}
+
+.line-numbers .line-highlight:before,
+.line-numbers .line-highlight:after {
+  content: none;
+}
