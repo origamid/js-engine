@@ -31,6 +31,7 @@ pre {
 
 .js-engine > section {
   overflow-y: scroll;
+  /* margin: 10px; */
 }
 
 .js-engine > section.event, .js-engine > section.code {
@@ -38,15 +39,21 @@ pre {
 }
 
 .js-engine > section::-webkit-scrollbar {
-  width: 8px;
+  width: 10px;
+  height: 10px;
   background: #EEE;
   border-radius: 4px;
 }
 
 .js-engine > section.code pre::-webkit-scrollbar, .js-engine > section.log::-webkit-scrollbar {
-  width: 8px;
+  width: 10px;
+  height: 10px;
   background: #222;
   border-radius: 4px;
+}
+
+.js-engine > section.code pre::-webkit-scrollbar-corner, .js-engine > section.log::-webkit-scrollbar-corner{
+	background-color: #222;
 }
 
 .js-engine > section.code pre::-webkit-scrollbar-thumb, .js-engine > section.code::-webkit-scrollbar-thumb {
@@ -59,6 +66,10 @@ pre {
   background: #c8c8c8;
   border: 3px solid #EEE;
   border-radius: 4px;
+}
+
+.js-engine > section::-webkit-scrollbar-corner {
+  background: #EEE;
 }
 
 .code {
@@ -367,4 +378,38 @@ h1 {
   grid-area: anotacao;
   overflow: hidden !important;
   min-height: 120px;
+  position: relative;
+}
+
+.nav {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-content: center;
+}
+
+.anterior, .proximo {
+  background: #e5e5e5 url('./img/arrow.svg') center center no-repeat;
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 4px 0 0 4px;
+}
+
+.anterior:hover, .proximo:hover, .anterior:focus, .proximo:focus {
+  background: #6D6 url('./img/arrow.svg') center center no-repeat;
+  cursor: pointer;
+  outline: none;
+}
+
+.proximo {
+  transform: rotate(180deg);
+}
+
+.etapa {
+  background: #eeeeee;
+  color: #222;
+  padding: .7rem 1rem 0 1rem;
+  font-weight: bold;
 }
