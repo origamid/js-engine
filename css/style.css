@@ -1,9 +1,11 @@
-@import './css/tooltip.css';
+@import './fonts.css';
+@import './tooltip.css';
+@import './prism.css';
 
 body, h1 {
   margin: 0px;
   padding: 0px;
-  font-family: 'IBM Plex Mono';
+  font-family: 'IBM Plex Mono', monospace;
   font-size: .875rem;
 }
 
@@ -390,7 +392,7 @@ h1 {
 }
 
 .anterior, .proximo {
-  background: #e5e5e5 url('./img/arrow.svg') center center no-repeat;
+  background: #e5e5e5 url('../img/arrow.svg') center center no-repeat;
   width: 40px;
   height: 40px;
   border: none;
@@ -398,7 +400,7 @@ h1 {
 }
 
 .anterior:hover, .proximo:hover, .anterior:focus, .proximo:focus {
-  background: #6D6 url('./img/arrow.svg') center center no-repeat;
+  background: #6D6 url('../img/arrow.svg') center center no-repeat;
   cursor: pointer;
   outline: none;
 }

@@ -1,4 +1,4 @@
-import initTooltip from './js/tooltip.js';
+import initTooltip from './tooltip.js';
 
 Prism.highlightAll();
 
