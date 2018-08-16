@@ -36,7 +36,9 @@ pre {
   /* margin: 10px; */
 }
 
-.js-engine > section.event, .js-engine > section.code {
+.js-engine > section.event,
+.js-engine > section.code,
+.js-engine > section.html-nav {
   overflow: hidden;
 }
 
@@ -47,14 +49,18 @@ pre {
   border-radius: 4px;
 }
 
-.js-engine > section.code pre::-webkit-scrollbar, .js-engine > section.log::-webkit-scrollbar {
+.js-engine > section.code pre::-webkit-scrollbar,
+.js-engine > section.html::-webkit-scrollbar,
+.js-engine > section.log::-webkit-scrollbar {
   width: 10px;
   height: 10px;
   background: #222;
   border-radius: 4px;
 }
 
-.js-engine > section.code pre::-webkit-scrollbar-corner, .js-engine > section.log::-webkit-scrollbar-corner{
+.js-engine > section.code pre::-webkit-scrollbar-corner,
+.js-engine > section.html::-webkit-scrollbar-corner,
+.js-engine > section.log::-webkit-scrollbar-corner {
 	background-color: #222;
 }
 
@@ -366,6 +372,7 @@ h1 {
 }
 
 .log .content span {
+  display: block;
   padding: 0px;
   margin-bottom: .5rem;
 }
@@ -374,6 +381,12 @@ h1 {
   counter-increment: span;
   content: counter(span) ' ';
   opacity: .5;
+}
+
+.html {
+  grid-area: log;
+  background: #222;
+  padding: 0px;
 }
 
 .anotacao {
@@ -414,4 +427,71 @@ h1 {
   color: #222;
   padding: .7rem 1rem 0 1rem;
   font-weight: bold;
+}
+
+.link-exemplos {
+  padding: 15px;
+  /* display: flex; */
+  align-items: center;
+}
+
+.link-exemplos h2 {
+  font-size: .865rem;
+  margin-top: 0px;
+  margin-bottom: .5rem;
+}
+
+.link-exemplos ul {
+  display: flex;
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+}
+
+.link-exemplos a {
+  display: block;
+  background: #222;
+  padding: .5rem 1rem;
+  border-radius: 2px;
+  color: white;
+  text-decoration: none;
+  margin-right: 20px;
+}
+
+.html-nav {
+  grid-area: log;
+  position: relative;
+  height: 25px;
+}
+
+
+.html-nav ul {
+  display: flex;
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+
+.html-nav a {
+  background: #aaa;
+  padding: .5rem;
+  display: block;
+  text-decoration: none;
+  color: #222;
+  font-weight: bold;
+}
+
+.html-nav a.active, .html-nav a:hover {
+  background: #eee;
+}
+
+.js-tabcontent {
+  display: none;
+}
+
+.js-tabcontent.active {
+  display: block;
 }

@@ -1,0 +1,47 @@
+<div id="code-line" data-line="0" data-etapas="14"></div>
+<pre id="code" class="line-numbers"><code class="language-js">const btn = document.querySelector('button');
+const section = document.querySelector('section');
+
+function handleClick(event) {
+  event.preventDefault();
+  section.classList.add('active');
+}
+
+console.log('console 1');
+
+setTimeout(() => {
+  console.log('timeout 2');
+});
+
+console.log('console 2');
+
+btn.addEventListener('click', handleClick);
+</code></pre>
+
+<div id="call" class="content">
+  <span class="func" data-anime>script.js</span>
+</div>
+
+<div id="queue" class="content">
+
+</div>
+
+<div id="memory" class="content">
+
+</div>
+
+<div id="api" class="content">
+
+</div>
+
+<div id="log" class="content">
+  <div class="active">
+  </div>
+</div>
+
+<pre id="html" class="line-numbers">
+<code class="language-markup"></code></pre>
+
+<div id="anotacao" class="content">
+  <p>Execução do script é iniciada.</p>
+</div>

@@ -1,4 +1,4 @@
-<div id="code" data-line="12"></div>
+<div id="code-line" data-line="12"></div>
 
 <div id="call" class="content">
   <span class="func" data-anime>log('timeout')</span>
@@ -9,8 +9,8 @@
 </div>
 
 <div id="memory" class="content">
-  <span class="str" aria-label="Element [.button]" >btn</span>
-  <span class="str" aria-label="Element [.section]" >section</span>
+  <span class="str" aria-label="Element [button]" >btn</span>
+  <span class="str" aria-label="Element [section]" >section</span>
   <span class="func" aria-label="handleClick() {...}" >handleClick</span>
 </div>
 
@@ -23,10 +23,15 @@
 </div>
 
 <div id="log" class="content">
-  <span>console 1</span>
-  <span>console 2</span>
-  <span data-anime>timeout</span>
+  <div class="active">
+    <span>console 1</span>
+    <span>console 2</span>
+    <span data-anime>timeout</span>
+  </div>
 </div>
+
+<pre id="html" class="line-numbers">
+<code class="language-markup"></code></pre>
 
 <div id="anotacao" class="content">
   <p>Execução: método log() executado. Argumento retornado no console.</p>

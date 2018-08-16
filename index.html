@@ -8,32 +8,21 @@
   <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
+  <nav class="link-exemplos">
+    <h2>Exemplos:</h2>
+    <ul>
+      <li><a href="#/settimeout/" data-total="14">setTimeout</a></li>
+      <li><a href="#/linkclick/" data-total="9">linkClick</a></li>
+    </ul>
+  </nav>
   <section class="js-engine">
-<section class="code">
-<div id="code"></div>
-<pre class="line-numbers"><code class="language-js">const btn = document.querySelector('.button');
-const section = document.querySelector('.section');
-
-function handleClick(event) {
-  event.preventDefault();
-  section.classList.add('active');
-}
-
-console.log('console 1');
-
-setTimeout(() => {
-  console.log('timeout 2');
-});
-
-console.log('console 2');
-
-btn.addEventListener('click', handleClick);
-</code></pre>
-</section>
+    <section class="code">
+      <div id="code-line"></div>
+      <pre id="code" class="line-numbers"></pre>
+    </section>
     <section class="call">
       <h1>Call Stack</h1>
-      <div id="call" class="content">
-      </div>
+      <div id="call" class="content"></div>
     </section>
     <section class="event">
       <div id="event">
@@ -47,18 +36,25 @@ btn.addEventListener('click', handleClick);
     </section>
     <section class="memory">
       <h1>Memory</h1>
-      <div id="memory" class="content">
-      </div>
+      <div id="memory" class="content"></div>
     </section>
     <section class="api">
       <h1>Web Api</h1>
-      <div id="api" class="content">
-      </div>
+      <div id="api" class="content"></div>
     </section>
-    <section class="log">
+    <section class="log js-tabcontent">
       <h1>Log</h1>
-      <div id="log" class="content">
-      </div>
+      <div id="log" class="content"></div>
+    </section>
+    <section class="html js-tabcontent">
+      <h1>HTML</h1>
+      <pre id="html" class="line-numbers"></pre>
+    </section>
+    <section class="html-nav">
+      <ul class="js-tabmenu">
+        <li><a href="#log">Log</a></li>
+        <li><a href="#html">HTML</a></li>
+      </ul>
     </section>
     <section class="anotacao">
       <h1>Anotações</h1>
