@@ -10,9 +10,7 @@ const c = {
 
 // Fetch inicial
 function init() {
-  const url = location.origin.split('/').pop();
-  const routeInicial = route(location);
-  if(url === routeInicial)
+  if(location.href.search('#') === -1)
     linkExemplos[0].click();
   else
     fetchAllContent(route(location), totalByLocation(location));
@@ -30,6 +28,11 @@ function handleLinkExemplo(event) {
   c.etapaAtual = 1;
   c.totalEtapas = +currentLink.dataset.total;
   fetchAllContent(route(currentLink), c.totalEtapas);
+}
+function addClassToUrlLink(url) {
+  linkExemplos.forEach(i => i.classList.remove('active'));
+  const element = document.querySelector(`[href="#/${url}/"]`);
+  element.classList.add('active');
 }
 
 // Limpa o url e retorna apenas a rota
@@ -57,6 +60,7 @@ function fetchAllContent(url, total) {
       fetchAllContent(url, total);
     else {
       c.totalEtapas = total;
+      addClassToUrlLink(url);
       fetchEtapa(1);
     }
   });
@@ -143,6 +147,7 @@ initNav();
 
 init();
 
+// Tab nav do Log e HTML
 function initTab() {
   const tabMenu = document.querySelectorAll('.js-tabmenu li a');
 
