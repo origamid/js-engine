@@ -1,0 +1,40 @@
+<div id="code-line" data-line="9"></div>
+
+<div id="call" class="content">
+  <span data-anime class="func">log()</span>
+  <span data-anime class="func">anonymous()</span>
+</div>
+
+<div id="queue" class="content">
+  <span class="func" aria-label="anonymous() {promessa.then()}">anonymous()</span>
+  <span class="func" aria-label="anonymous() {log('Timeout 2')}">anonymous()</span>
+  <h1 class="microtask">Microtask Queue</h1>
+  <span class="func" aria-label="anonymous() {log('Promise 2')}" data-remove>anonymous()</span>
+  <span class="func" aria-label="anonymous() {log('Promise 3')}" >anonymous()</span>
+</div>
+
+<div id="memory" class="content">
+  <span class="str" aria-label="[Promise: Resolved]">promessa</span>
+</div>
+
+<div id="api" class="content">
+  <div class="api-link">
+    <span class="evt time" aria-label="1000">time</span>
+    <span class="func" aria-label="anonymous() {log('Timeout 1')}" >anonymous()</span>
+  </div>
+</div>
+
+<div id="log" class="content">
+  <div class="active">
+    <span>Log 1</span>
+    <span>Log 2</span>
+    <span data-anime>Promise 2</span>
+  </div>
+</div>
+
+<pre id="html" class="line-numbers">
+<code class="language-markup"></code></pre>
+
+<div id="anotacao" class="content">
+  <p>Microtask Queue: método log dentro da função anônima da promessa executado.</p>
+</div>

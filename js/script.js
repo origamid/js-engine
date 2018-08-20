@@ -8,6 +8,10 @@ const c = {
   totalEtapas: 0,
 }
 
+if(window.self !== window.top) {
+  document.querySelector('nav').classList.add('hide');
+}
+
 // Fetch inicial
 function init() {
   if(location.href.search('#') === -1)
@@ -56,6 +60,7 @@ function fetchAllContent(url, total) {
   .then(r => {
     c.etapaInicial++;
     c.contentArray.push(r);
+    document.body.classList.add(url);
     if(c.etapaInicial <= total)
       fetchAllContent(url, total);
     else {

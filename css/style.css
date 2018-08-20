@@ -18,6 +18,10 @@ pre {
   margin-top: 20px;
 }
 
+nav.hide {
+  display: none;
+}
+
 .js-engine {
   display: grid;
   grid-gap: 20px;
@@ -500,4 +504,23 @@ h1 {
 
 .js-tabcontent.active {
   display: block;
+}
+
+.microtask {
+  border-top: dotted 1px;
+  padding-top: 5px;
+  margin-top: 10px;
+}
+
+.promises .js-engine {
+  display: grid;
+  grid-gap: 20px;
+  box-sizing: border-box;
+  grid-template-rows: 150px 34px 50px 150px;
+  grid-template-columns: 45% 23% 1fr;
+  grid-template-areas:  "code call memory"
+                        "code event api"
+                        "code queue api"
+                        "code queue api"
+                        "log anotacao anotacao";
 }
